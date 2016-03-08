@@ -1,0 +1,25 @@
+{
+    "modificandouserApp": {
+        "proceso" : {
+            "home": {
+                "title": "Procesos",
+                "createLabel": "Créer un nouveau Proceso",
+                "createOrEditLabel": "Créer ou éditer un Proceso",
+                "search": "Search for Proceso"
+            },
+            "created": "Un nouveau Proceso a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Proceso avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Proceso avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Proceso {{ id }} ?"
+            },
+            "detail": {
+                "title": "Proceso"
+            },
+            "nombre": "Nombre",
+            "pedido": "Pedido",
+            "trabajador": "Trabajador"
+        }
+    }
+}
+

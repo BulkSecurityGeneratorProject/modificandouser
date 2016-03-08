@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myTrabajadorLabel" translate="modificandouserApp.trabajador.home.createOrEditLabel">Create or edit a Trabajador</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="trabajador.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.trabajador.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="trabajador.nombre"
+                    required />
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.trabajador.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="trabajador.email"
+                    required />
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.trabajador.dni" for="field_dni">Dni</label>
+            <input type="text" class="form-control" name="dni" id="field_dni"
+                    ng-model="trabajador.dni"
+                    required />
+            <div ng-show="editForm.dni.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dni.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.trabajador.numeroTelf" for="field_numeroTelf">NumeroTelf</label>
+            <input type="number" class="form-control" name="numeroTelf" id="field_numeroTelf"
+                    ng-model="trabajador.numeroTelf"
+                    required />
+            <div ng-show="editForm.numeroTelf.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.numeroTelf.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.numeroTelf.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="modificandouserApp.trabajador.proceso" for="field_proceso">proceso</label>
+            <select class="form-control" id="field_proceso" multiple name="proceso" ng-model="trabajador.procesos" ng-options="proceso as proceso.nombre for proceso in procesos track by proceso.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

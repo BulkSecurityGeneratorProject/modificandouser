@@ -1,0 +1,34 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "pedido",
+            "otherEntityName": "pedido",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "proceso"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "trabajador",
+            "otherEntityName": "trabajador",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "proceso"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160307201656",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

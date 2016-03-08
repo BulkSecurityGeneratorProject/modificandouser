@@ -1,0 +1,74 @@
+
+<div>
+    <h2><span translate="modificandouserApp.pedido.detail.title">Pedido</span> {{pedido.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.pedido.descripcion">Descripcion</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{pedido.descripcion}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.pedido.costeSinIva">CosteSinIva</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{pedido.costeSinIva}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.pedido.costeTotal">CosteTotal</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{pedido.costeTotal}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.pedido.proceso">proceso</span>
+                </td>
+                <td>
+                    <span ng-repeat="proceso in pedido.procesos">
+                        <a class="form-control-static" ui-sref="proceso.detail({id: {{proceso.id}}})">{{proceso.nombre}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.pedido.trabajador">trabajador</span>
+                </td>
+                <td>
+                    <span ng-repeat="trabajador in pedido.trabajadors">
+                        <a class="form-control-static" ui-sref="trabajador.detail({id: {{trabajador.id}}})">{{trabajador.nombre}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.pedido.user">user</span>
+                </td>
+                <td>
+                    {{pedido.user.login}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

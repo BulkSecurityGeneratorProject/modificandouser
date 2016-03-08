@@ -1,0 +1,28 @@
+{
+    "modificandouserApp": {
+        "pedido" : {
+            "home": {
+                "title": "Pedidos",
+                "createLabel": "Créer un nouveau Pedido",
+                "createOrEditLabel": "Créer ou éditer un Pedido",
+                "search": "Search for Pedido"
+            },
+            "created": "Un nouveau Pedido a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pedido avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pedido avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pedido {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pedido"
+            },
+            "descripcion": "Descripcion",
+            "costeSinIva": "CosteSinIva",
+            "costeTotal": "CosteTotal",
+            "proceso": "Proceso",
+            "trabajador": "Trabajador",
+            "user": "User"
+        }
+    }
+}
+

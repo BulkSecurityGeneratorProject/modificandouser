@@ -1,0 +1,28 @@
+{
+    "modificandouserApp": {
+        "trabajador" : {
+            "home": {
+                "title": "Trabajadors",
+                "createLabel": "Créer un nouveau Trabajador",
+                "createOrEditLabel": "Créer ou éditer un Trabajador",
+                "search": "Search for Trabajador"
+            },
+            "created": "Un nouveau Trabajador a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Trabajador avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Trabajador avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Trabajador {{ id }} ?"
+            },
+            "detail": {
+                "title": "Trabajador"
+            },
+            "nombre": "Nombre",
+            "email": "Email",
+            "dni": "Dni",
+            "numeroTelf": "NumeroTelf",
+            "proceso": "Proceso",
+            "pedido": "Pedido"
+        }
+    }
+}
+

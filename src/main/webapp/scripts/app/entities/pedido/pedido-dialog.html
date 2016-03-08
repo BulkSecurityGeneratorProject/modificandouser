@@ -1,0 +1,83 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPedidoLabel" translate="modificandouserApp.pedido.home.createOrEditLabel">Create or edit a Pedido</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="pedido.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.pedido.descripcion" for="field_descripcion">Descripcion</label>
+                <textarea class="form-control" name="descripcion" id="field_descripcion"
+                    ng-model="pedido.descripcion" required />
+            <div ng-show="editForm.descripcion.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descripcion.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.pedido.costeSinIva" for="field_costeSinIva">CosteSinIva</label>
+            <input type="number" class="form-control" name="costeSinIva" id="field_costeSinIva"
+                    ng-model="pedido.costeSinIva"
+                    required />
+            <div ng-show="editForm.costeSinIva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.costeSinIva.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.costeSinIva.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="modificandouserApp.pedido.costeTotal" for="field_costeTotal">CosteTotal</label>
+            <input type="number" class="form-control" name="costeTotal" id="field_costeTotal"
+                    ng-model="pedido.costeTotal"
+                    required />
+            <div ng-show="editForm.costeTotal.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.costeTotal.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.costeTotal.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="modificandouserApp.pedido.proceso" for="field_proceso">proceso</label>
+            <select class="form-control" id="field_proceso" multiple name="proceso" ng-model="pedido.procesos" ng-options="proceso as proceso.nombre for proceso in procesos track by proceso.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="modificandouserApp.pedido.trabajador" for="field_trabajador">trabajador</label>
+            <select class="form-control" id="field_trabajador" multiple name="trabajador" ng-model="pedido.trabajadors" ng-options="trabajador as trabajador.nombre for trabajador in trabajadors track by trabajador.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="modificandouserApp.pedido.user" for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="pedido.user" ng-options="user as user.login for user in users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

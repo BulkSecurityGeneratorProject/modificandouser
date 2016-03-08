@@ -1,0 +1,58 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "proceso",
+            "otherEntityName": "proceso",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "trabajador",
+            "otherEntityName": "trabajador",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "descripcion",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "costeSinIva",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "costeTotal",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160307202203",
+    "dto": "no",
+    "service": "no",
+    "pagination": "no"
+}

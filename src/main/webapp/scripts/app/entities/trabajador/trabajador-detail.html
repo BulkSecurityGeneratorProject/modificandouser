@@ -1,0 +1,64 @@
+
+<div>
+    <h2><span translate="modificandouserApp.trabajador.detail.title">Trabajador</span> {{trabajador.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.trabajador.nombre">Nombre</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{trabajador.nombre}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.trabajador.email">Email</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{trabajador.email}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.trabajador.dni">Dni</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{trabajador.dni}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.trabajador.numeroTelf">NumeroTelf</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{trabajador.numeroTelf}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="modificandouserApp.trabajador.proceso">proceso</span>
+                </td>
+                <td>
+                    <span ng-repeat="proceso in trabajador.procesos">
+                        <a class="form-control-static" ui-sref="proceso.detail({id: {{proceso.id}}})">{{proceso.nombre}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
